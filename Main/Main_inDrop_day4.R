@@ -36,6 +36,8 @@ workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj/inDrop_d
 exprimentID          = "d4"                              		# experiment or data set ID
 
 setwd(workdir)
+dir.create(file.path(workdir, "results"), showWarnings = FALSE) #folder to save results
+dir.create(file.path(workdir, "figures"), showWarnings = FALSE) #folder to save figures
 #load packages and functions
 source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
