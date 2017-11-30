@@ -13,27 +13,27 @@ GeneList             = 1                                                # parame
 Gamma                = 0.9                                              # parameter for clustering
 diff.cutoff          = 1                                                # MAST analysis, filter genes that don't have high log2_foldchange to reduce gene num
 lr.p_value_cutoff    = 1e-5                                             # MAST analysis, pvalue cutoff to identify differentially expressed genes
-CountsForNormalized  = 100000											                      # if normalizing- by default not used
-Rfundir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/
-														Rfunction/"		                              # where GiniClust2 R functions are stored
+CountsForNormalized  = 100000						# if normalizing- by default not used
+Rfundir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Rfunction/"
+									# where GiniClust2 R functions are stored
 
 #dataset-specific parameters:
 MinPts               = 3                                                # parameter for DBSCAN
 eps                  = 0.34                                             # parameter for DBSCAN
-mycols               = c("grey50","greenyellow","red","blue","black",
-															"orange")                                 # color setting for tSNE plot
-perplexity_G         = 30											                        	# parameter for Gini tSNE
-perplexity_F         = 30											                        	# parameter for Fano tSNE
-max_iter_G           = 1000 											                      # parameter for Gini tSNE
-max_iter_F           = 1000   								                    			# parameter for Fano tSNE
-k                    = 2 										                        		# k for k-means step
-gap_statistic        = FALSE 										                        # whether the gap statistic should be used to determine k- here will also yield 2
-K.max                = 10 											                        # if using the gap statistic, highest k that should be considered
-automatic_eps        = FALSE 										                        # whether to determine eps using KNN
-automatic_minpts     = FALSE 										                        # whether to determine MinPts based on the size of the data set
-workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj
-														/inDrop_day4/"                              # where you put the data and results
-exprimentID          = "d4"                              			        	# experiment or data set ID
+mycols               = c("grey50","greenyellow","red","blue","black","orange")                                 
+									# color setting for tSNE plot
+perplexity_G         = 30						# parameter for Gini tSNE
+perplexity_F         = 30						# parameter for Fano tSNE
+max_iter_G           = 1000 						# parameter for Gini tSNE
+max_iter_F           = 1000   						# parameter for Fano tSNE
+k                    = 2 						# k for k-means step
+gap_statistic        = FALSE 						# whether the gap statistic should be used to determine k- here will also yield 2
+K.max                = 10 						# if using the gap statistic, highest k that should be considered
+automatic_eps        = FALSE 						# whether to determine eps using KNN
+automatic_minpts     = FALSE 						# whether to determine MinPts based on the size of the data set
+workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj/inDrop_day4/"                              
+									# where you put the data and results
+exprimentID          = "d4"                              		# experiment or data set ID
 
 setwd(workdir)
 #load packages and functions
