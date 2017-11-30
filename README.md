@@ -13,9 +13,9 @@ The following folders are included:
       - **Main_inDrop_day4.R**: inDrop data from mouse embryonic stem cells 4 days post-LIF [3].
       - **Main_10X_full.R**: The full 68k-cell 10X PBMC data set [2].
       
-   - **Proj**: this contains four subfolders for each of the data sets mention above.  Each of these contain data, results, and figures from the GiniClust2 analyses.
+   - **Proj**: This folder contains four subfolders for each of the data sets mentioned above.  Each of these contain data, results, and figures from the GiniClust2 analyses.
    
-   - **Rfunction**: this contains the R scripts for GiniClust2, called in the "Main" files.
+   - **Rfunction**: This folder contains the R scripts for GiniClust2, called in the "Main" files.
 
 
 ###### Data sources:<br />
