@@ -1,6 +1,6 @@
 #Preprocess and filter 10X data using 10X code: https://github.com/10XGenomics/single-cell-3prime-paper
 
-wd<-"../../single-cell-3prime-paper-master/pbmc68k_analysis/"
+wd<-"single-cell-3prime-paper-master/pbmc68k_analysis/"
 source(paste(wd,file.path('util.R'),sep=""))
 pbmc_68k <- readRDS(paste("data/",file.path('pbmc68k_data.rds'),sep=""))
 all_data <- pbmc_68k$all_data
