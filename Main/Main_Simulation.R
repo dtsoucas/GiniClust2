@@ -35,6 +35,8 @@ exprimentID          = "simu"                              		# experiment or dat
 
 
 setwd(workdir)
+dir.create(file.path(workdir, "results"), showWarnings = FALSE) #folder to save results
+dir.create(file.path(workdir, "figures"), showWarnings = FALSE) #folder to save figures
 #load packages and functions
 source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
