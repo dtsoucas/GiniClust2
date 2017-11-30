@@ -61,17 +61,15 @@ if (!require("R.utils")) {
 }
 
 if (!require("MAST")) {
-  install.packages('devtools', dependencies = TRUE, repos="http://cran.r-project.org")
-  library(devtools)
-  # install_github('RGLab/MAST')
-  # *or* if you don't have a working latex setup
-  install_github(RGLab/'MAST', build_vignettes=FALSE)
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("MAST")
 }
 if (!require("svd")) {
   install.packages("svd", dependencies = TRUE, repos="http://cran.r-project.org")
 }
 if (!require("GraphAT")) {
-  install.packages("GraphAT", dependencies = TRUE, repos="http://cran.r-project.org")
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("GraphAT")
 }
 if (!require("varhandle")) {
   install.packages("varhandle", dependencies = TRUE, repos="http://cran.r-project.org")
