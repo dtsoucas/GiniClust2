@@ -1,10 +1,10 @@
 #Generate simulated data using RaceID intestinal data
 
 ## load class definition and functions
-source("../../RaceID-master/RaceID_class.R")
+source("RaceID-master/RaceID_class.R")
 
 ## input data- from RaceID
-x <- read.csv("../../RaceID-master/transcript_counts_intestine.xls",sep="\t",header=TRUE)
+x <- read.csv("RaceID-master/transcript_counts_intestine.xls",sep="\t",header=TRUE)
 rownames(x) <- x$GENEID
 # prdata: data.frame with transcript counts for all genes (rows) in all cells (columns); with rownames == gene ids; remove ERCC spike-ins 
 prdata <- x[grep("ERCC",rownames(x),invert=TRUE),-1]
