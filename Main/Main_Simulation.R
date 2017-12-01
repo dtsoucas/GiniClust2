@@ -41,7 +41,7 @@ dir.create(file.path(workdir, "figures"), showWarnings = FALSE) #folder to save 
 source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
 
-#source(paste(Rfundir,"Generate_Simulated_Data.R",sep="")) # generate simulated data based on RaceID, RaceID-master was downloaded from https://github.com/dgrun/RaceID
+source(paste(Rfundir,"Generate_Simulated_Data.R",sep="")) # generate simulated data based on RaceID, RaceID-master was downloaded from https://github.com/dgrun/RaceID
 
 #Preprocessing the data
 source(paste(Rfundir,"PreProcess_for_Simulation.R",sep=""))
