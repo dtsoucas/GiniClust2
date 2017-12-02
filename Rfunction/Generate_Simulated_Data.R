@@ -82,5 +82,6 @@ for (id_c in 1:length(size_clusters)){
 sim_data[is.na(sim_data)] <- 0
 
 sim_data_final = cbind(GENEID=rownames(sim_data),sim_data)
+dir.create(file.path(workdir, "data"), showWarnings = FALSE) #folder to save data
 write.table(sim_data_final,paste("data/Data_",paste(size_clusters,collapse = '_'),".xls",sep = ''),
             row.names=FALSE,col.names=TRUE,sep="\t",quote=FALSE)
