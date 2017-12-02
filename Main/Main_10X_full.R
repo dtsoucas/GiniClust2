@@ -19,9 +19,8 @@ Rfundir              = "/gcdata/dtsoucas/s1/GiniClust2/Rfunction/"      # where 
 #dataset-specific parameters:
 MinPts               = 100                                              # parameter for DBSCAN
 eps                  = 0.45                                             # parameter for DBSCAN
-mycols               = c("grey50","greenyellow","red","blue","black",
-                         "green","orange","purple","yellow","navy",
-                         "magenta")                                     # color setting for tSNE plot
+mycols               = c("grey50","greenyellow","red","blue","black","green","orange","purple","yellow","navy","magenta")                           
+                                                                        # color setting for tSNE plot
 perplexity_G         = 30                                               # parameter for Gini tSNE
 perplexity_F         = 30                                               # parameter for Fano tSNE
 max_iter_G           = 1000                                             # parameter for Gini tSNE
