@@ -23,9 +23,6 @@ NKcells<-which(clusters=="CD56+ NK")
 Bcells<-which(clusters=="CD19+ B")
 CD14cells<-which(clusters=="CD14+ Monocyte")
 
-workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj/10X_subsampled/"  # where you put the data and results
-setwd(workdir)
-
 #generate datasets with SAME set of rare cells
 #set.seed(50)
 samplingRare<-c(sample(NKcells,5))
