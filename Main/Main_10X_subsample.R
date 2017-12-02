@@ -14,15 +14,14 @@ Gamma                = 0.9                                              # parame
 diff.cutoff          = 1                                                # MAST analysis, filter genes that don't have high a log2_foldchange to reduce gene num
 lr.p_value_cutoff    = 1e-5                                             # MAST analysis, pvalue cutoff to identify differentially expressed genes
 CountsForNormalized  = 100000                                           # if normalizing- by default not used
-Rfundir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/
-                                                        Rfunction/"     # where GiniClust2 R functions are stored
+Rfundir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Rfunction/"     
+                                                                        # where GiniClust2 R functions are stored
 
 #dataset specific parameters:
 MinPts               = 3                                                # parameter for DBSCAN
 eps                  = 0.45                                             # parameter for DBSCAN
-mycols               = c("grey50","greenyellow","red","blue","black",
-                        "green","orange","purple","yellow","navy",
-                                                          "magenta")    # color setting for tSNE plot
+mycols               = c("grey50","greenyellow","red","blue","black","green","orange","purple","yellow","navy","magenta")
+                                                                        # color setting for tSNE plot
 perplexity_G         = 30                                               # parameter for Gini tSNE
 perplexity_F         = 30                                               # parameter for Fano tSNE
 max_iter_G           = 1000                                             # parameter for Gini tSNE
@@ -32,8 +31,8 @@ gap_statistic        = FALSE                                            # whethe
 K.max                = 10                                               # if using the gap statistic, highest k that should be considered
 automatic_eps        = FALSE                                            # whether to determine eps using KNN- for consistency we use the same eps as full data set here
 automatic_minpts     = TRUE                                             # whether to determine MinPts based on the size of the data set                                          
-workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/
-                                              Proj/10X_subsampled/"     # where you put the data and results
+workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj/10X_subsampled/"     
+                                                                        # where you put the data and results
 
 
 setwd(workdir)
@@ -45,7 +44,7 @@ source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
 
 #generate 160 data sets, with different proportions
-#source(paste(Rfundir,"Generate_10X_datasets.R"))
+source(paste(Rfundir,"Generate_10X_datasets.R"))
 
 #for each of 160 data sets, run GiniClust2
 #for each, plot a barplot comparing the reference and the GiniClust2 result
