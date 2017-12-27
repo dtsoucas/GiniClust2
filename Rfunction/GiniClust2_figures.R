@@ -13,41 +13,17 @@ load(paste("results/", exprimentID,"_ExprM.filter.RData", sep=""))  #"ExprM.RawC
 
 #plot visualizations
 
-if (length(finalCluster)>1000){
-  #smaller point size
-  p1<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_G[,1],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Gini 1")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p2<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p3<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,2],Rtsne_map_G[,1],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 2", y="Gini 1")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p4<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,2],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 2", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p5<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_F[,2],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Fano 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p6<-ggplot(Rtsne_map_F,aes(Rtsne_map_G[,1],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=0,alpha=0.6)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Gini 1", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  g<-grid.arrange(p1,p2,p3,p4,p5,p6,ncol=2)
-  ggsave(paste("figures/Figures_", exprimentID, "_tsne_plot_combined.pdf", sep=""),g)
-  
-} else{
-  #larger point size
-  p1<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_G[,1],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Gini 1")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p2<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p3<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,2],Rtsne_map_G[,1],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 2", y="Gini 1")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p4<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,2],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 2", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p5<-ggplot(Rtsne_map_F,aes(Rtsne_map_F[,1],Rtsne_map_F[,2],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Fano 1", y="Fano 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  p6<-ggplot(Rtsne_map_F,aes(Rtsne_map_G[,1],Rtsne_map_G[,2],col=as.factor(finalCluster)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-    scale_color_manual(values=mycols,name="Final Clusters")+labs(x="Gini 1", y="Gini 2")+ guides(colour = guide_legend(override.aes = list(size=2)))
-  g<-grid.arrange(p1,p2,p3,p4,p5,p6,ncol=2)
-  ggsave(paste("figures/Figures_", exprimentID, "_tsne_plot_combined.pdf", sep=""),g)
-  
-}
+mydata<-cbind(Rtsne_map_F[,1],Rtsne_map_F[,2],Rtsne_map_G[,1])
+colnames(mydata)<-c("1m","2m","3m")
+mydata<-as.data.frame(mydata)
+pdf(paste("figures/Figures_", exprimentID, "_tsne_plot_combined.pdf", sep=""))
+with(mydata, {
+   scatterplot3d(Rtsne_map_F[,1],   # x axis
+                 Rtsne_map_F[,2],     # y axis
+                 Rtsne_map_G[,1], color=mycols[finalCluster], pch=19,cex.symbols=0.4,xlab="Fano 1",ylab="Fano 2",zlab="Gini",cex.axis=1.2)
+})
+legend("topright",col=mycols[1:length(unique(finalCluster))],legend=(1:length(unique(finalCluster))),lty=c(1,1), lwd=2,bg="white",cex=0.5)
+dev.off()
 
 
 #venn diagram figures to compare overlap with DE genes and high Fano and high Gini genes
