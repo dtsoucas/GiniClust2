@@ -8,18 +8,13 @@ if (dim(cell.cell.jaccard.distance)[1]>10000){
   
   pc<-propack.svd(as.matrix(cell.cell.jaccard.distance), neig = 50)
   pcloadings<-t(pc$d*t(pc$u))
-  Rtsne_map <- Rtsne(pcloadings, pca = TRUE, perplexity = perplexity_G,check_duplicates = FALSE,max_iter=max_iter_G)  
+  Rtsne_map <- Rtsne(pcloadings, pca = TRUE, perplexity = perplexity_G,check_duplicates = FALSE,max_iter=max_iter_G,dims=1)  
   
 } else{
     
-  Rtsne_map <- Rtsne(as.matrix(cell.cell.jaccard.distance), pca = FALSE, perplexity = perplexity_G,check_duplicates = FALSE,max_iter=max_iter_G)       
+  Rtsne_map <- Rtsne(as.matrix(cell.cell.jaccard.distance), pca = FALSE, perplexity = perplexity_G,check_duplicates = FALSE,max_iter=max_iter_G,dims=1)       
   
 }
-
-ggplot(as.data.frame(Rtsne_map$Y),aes(Rtsne_map$Y[,1],Rtsne_map$Y[,2],col=as.factor(P_G)))+geom_point(size=1,alpha=0.8)+theme_classic()+
-  scale_color_manual(values=mycols,name="Gini Clusters")+labs(x="Gini 1", y="Gini 2")
-ggsave(paste("figures/Figures_", exprimentID, "_perplexity_", perplexity_G, "_tsne_plot_P_G.pdf", sep=""))
-  
 
 # save results
 Rtnse_coord2 <-  as.data.frame(Rtsne_map$Y)
