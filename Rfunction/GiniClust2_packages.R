@@ -59,7 +59,6 @@ if (!require("cluster")) {
 if (!require("R.utils")) {
   install.packages("R.utils", dependencies = TRUE, repos="http://cran.r-project.org")
 }
-
 if (!require("MAST")) {
   source("https://bioconductor.org/biocLite.R")
   biocLite("MAST")
@@ -79,6 +78,9 @@ if (!require("gridExtra")) {
 }
 if (!require("VennDiagram")) {
   install.packages("VennDiagram", dependencies = TRUE, repos="http://cran.r-project.org")
+}
+if (!require("scatterplot3d")) {
+  install.packages("scatterplot3d", dependencies = TRUE, repos="http://cran.r-project.org")
 }
 
 #Load libraries
@@ -107,6 +109,7 @@ library(GraphAT)
 library(varhandle)
 library(gridExtra)
 library(VennDiagram)
+library(scatterplot3d)
 
 #extra RaceID packages
 #require(tsne)
