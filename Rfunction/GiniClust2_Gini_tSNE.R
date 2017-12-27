@@ -19,5 +19,5 @@ if (dim(cell.cell.jaccard.distance)[1]>10000){
 # save results
 Rtnse_coord2 <-  as.data.frame(Rtsne_map$Y)
 rownames(Rtnse_coord2) = rownames(cell.cell.jaccard.distance)
-colnames(Rtnse_coord2) = c("dim1", "dim2")
+colnames(Rtnse_coord2) = c("dim1")
 write.table(Rtnse_coord2, file=paste("results/", exprimentID,"_Rtnse_Gini_coord2.csv", sep=""), sep=",", row.names = TRUE, col.names = TRUE)
