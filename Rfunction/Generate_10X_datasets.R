@@ -1,7 +1,7 @@
 #Generate 10X subsampled data sets
 
 #load 10X data, normalize as in 10X code
-wd<-"../../single-cell-3prime-paper-master/pbmc68k_analysis/"
+wd<-"../10X_full/single-cell-3prime-paper-master/pbmc68k_analysis/"
 source(paste(wd,file.path('util.R'),sep=""))
 pbmc_68k <- readRDS('../10X_full/data/pbmc68k_data.rds')
 all_data <- pbmc_68k$all_data
