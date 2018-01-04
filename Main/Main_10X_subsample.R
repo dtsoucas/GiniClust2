@@ -44,7 +44,7 @@ source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
 
 #generate 160 data sets, with different proportions
-source(paste(Rfundir,"Generate_10X_datasets.R"))
+source(paste(Rfundir,"Generate_10X_datasets.R",sep=""))
 
 #for each of 160 data sets, run GiniClust2
 #for each, plot a barplot comparing the reference and the GiniClust2 result
