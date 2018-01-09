@@ -2,9 +2,9 @@
 
 GiniClust2 is a clustering algorithm for the simultaneous detection of common and rare cell types from single-cell gene expression data.  It uses a novel cluster-aware weighted consensus clustering algorithm to combine GiniClust and Fano-based k-means clustering results, by maximizing the strengths of these individual clustering methods in detecting rare and common clusters, respectively.
 
-GiniClust2 is written in the R programming language.
+GiniClust2 is written in the R programming language.  To use, please download the "GiniClust2\_download" folder and follow the instructions provided in the "Reference\_Manual.pdf".
 
-The following folders are included: 
+The following additional folders are included, which contain GiniClust2 applications to several data sets: 
 
    - **Main**: This folder contains the following main scripts for running GiniClust2 on four simulated and real data sets:
    
