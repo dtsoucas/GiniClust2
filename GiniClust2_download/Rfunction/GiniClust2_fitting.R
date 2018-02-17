@@ -117,7 +117,7 @@ length(Genelist.HighNormGini)
 
 # .4 identify High Gini Genes with pvalue
 ExprM.Stat2         = ExprM.Stat2[order(ExprM.Stat2$Gini.pvalue),]
-Genelist.top_pvalue = rownames(ExprM.Stat2[ExprM.Stat2$Gini.pvalue < Gini.pvalue_cutoff & ExprM.Stat2$Norm.Gini2 > 0,])
+Genelist.top_pvalue = rownames(ExprM.Stat2[intersect(which(ExprM.Stat2$Gini.pvalue < Gini.pvalue_cutoff),which(ExprM.Stat2$Norm.Gini2 > 0)),])
 length(Genelist.top_pvalue)
 
 
@@ -127,7 +127,7 @@ yall = ExprM.Stat2$Gini
 yfit2 = Gini.fitted2 
 #Histogram of pvalue
 main=paste("Histogram of -log10(Gini.pvalue)", "\ncutoff=",Gini.pvalue_cutoff, "\n Gene num=", length(Genelist.top_pvalue), sep="")
-pdf(paste("figures/", exprimentID, "_histogram of Nomlized.Gini.Socre.pdf", sep=""), width=6, height=6)
+pdf(paste("figures/", exprimentID, "_histogram of Normalized.Gini.Score.pdf", sep=""), width=6, height=6)
 hist(0-log10(ExprM.Stat2$Gini.pvalue), breaks=100, main=main)
 abline(v=0-log10(Gini.pvalue_cutoff), col="red")
 dev.off()
