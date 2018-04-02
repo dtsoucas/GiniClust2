@@ -26,7 +26,7 @@ perplexity_G         = 30                                               # parame
 perplexity_F         = 30                                               # parameter for Fano tSNE
 max_iter_G           = 1000                                             # parameter for Gini tSNE
 max_iter_F           = 1000                                             # parameter for Fano tSNE
-ks                   = c(2,2,2,2,2,3,3,3)                               # a range of k's for k-means for subsampled data depending on rarity: use k=2 for rarer, k=3 for more common
+ks                   = c(2,2,2,3,3,3,3)                                 # a range of k's for k-means for subsampled data depending on rarity: use k=2 for rarer, k=3 for more common
 gap_statistic        = FALSE                                            # whether the gap statistic should be used to determine k
 K.max                = 10                                               # if using the gap statistic, highest k that should be considered
 automatic_eps        = TRUE                                             # whether to determine eps using KNN- for consistency we use the same eps as full data set here
@@ -43,12 +43,12 @@ dir.create(file.path(workdir, "figures"), showWarnings = FALSE) #folder to save 
 source(paste(Rfundir,"GiniClust2_packages.R",sep=""))
 source(paste(Rfundir,"GiniClust2_functions.R",sep=""))
 
-#generate 160 data sets, with different proportions
+#generate 140 data sets, with different proportions
 source(paste(Rfundir,"Generate_10X_datasets.R",sep=""))
 
-#for each of 160 data sets, run GiniClust2
+#for each of 140 data sets, run GiniClust2
 #for each, plot a barplot comparing the reference and the GiniClust2 result
-for (j in 1:8){
+for (j in 1:7){
   for (i in 1:20){
     k=ks[j]
     exprimentID<-paste("10X_rare",j,"_",i,sep="")
