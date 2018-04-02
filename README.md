@@ -9,7 +9,7 @@ The following additional folders are included, which contain GiniClust2 applicat
    - **Main**: This folder contains the following main scripts for running GiniClust2 on four simulated and real data sets:
    
       - **Main_Simulation.R**: Data simulated from intestinal cells [1], to create both common and rare cell types.
-      - **Main_10X_subsample.R**: Data subsampled at various proportions from 10X PBMC data [2], to create 160 datasets with cell types of varying rarity.
+      - **Main_10X_subsample.R**: Data subsampled at various proportions from 10X PBMC data [2], to create 140 datasets with cell types of varying rarity.
       - **Main_inDrop_day4.R**: inDrop data from mouse embryonic stem cells 4 days post-LIF [3].
       - **Main_10X_full.R**: The full 68k-cell 10X PBMC data set [2].
       
