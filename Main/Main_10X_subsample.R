@@ -29,7 +29,7 @@ max_iter_F           = 1000                                             # parame
 ks                   = c(2,2,2,2,2,3,3,3)                               # a range of k's for k-means for subsampled data depending on rarity: use k=2 for rarer, k=3 for more common
 gap_statistic        = FALSE                                            # whether the gap statistic should be used to determine k
 K.max                = 10                                               # if using the gap statistic, highest k that should be considered
-automatic_eps        = FALSE                                            # whether to determine eps using KNN- for consistency we use the same eps as full data set here
+automatic_eps        = TRUE                                             # whether to determine eps using KNN- for consistency we use the same eps as full data set here
 automatic_minpts     = TRUE                                             # whether to determine MinPts based on the size of the data set                                          
 workdir              = "/Users/Daphne/Documents/Yuan/GiniClust2_V1/Proj/10X_subsampled/"     
                                                                         # where you put the data and results
