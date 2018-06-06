@@ -12,7 +12,7 @@ length(Genelist)
 ExprM.RawCounts.filter = ExprM.RawCounts[Genelist,ExpressedGene_per_cell >= minGeneNum]
 ExprM.normCounts.filter  = ExprM.normCounts[rownames(ExprM.RawCounts.filter), colnames(ExprM.RawCounts.filter)]
 dim(ExprM.RawCounts.filter) 
-dim(ExprM.normCounts.filter) 
-write.table(ExprM.RawCounts.filter, file=paste("results/", exprimentID, "_gene.expression.matrix.normCounts.filtered.csv", sep=""), sep=",", row.names = TRUE, col.names = TRUE)
-write.table(ExprM.normCounts.filter,  file=paste("results/", exprimentID, "_gene.expression.matrix.RawCounts.filtered.csv", sep=""),  sep=",", row.names = TRUE, col.names = TRUE)
+dim(ExprM.normCounts.filter)
+write.table(ExprM.RawCounts.filter,  file=paste("results/", exprimentID, "_gene.expression.matrix.RawCounts.filtered.csv", sep=""),  sep=",", row.names = TRUE, col.names = TRUE)
+write.table(ExprM.normCounts.filter, file=paste("results/", exprimentID, "_gene.expression.matrix.normCounts.filtered.csv", sep=""), sep=",", row.names = TRUE, col.names = TRUE)
 save(ExprM.RawCounts.filter, ExprM.normCounts.filter, file=paste("results/", exprimentID, "_ExprM.filter.RData", sep=""))
